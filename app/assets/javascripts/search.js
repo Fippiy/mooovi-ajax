@@ -48,14 +48,17 @@ $(function() {
 
     .done(function(products) {
       $(".listview.js-lazy-load-images").empty();
-      if products.length !== 0 {
+      if (products.length !== 0) {
         products.forEach(function(product){
           appendProduct(product);
         });
       }
       else {
-        appendNorProduct("一致する映画はありません");
+        appendNoProduct("一致する映画はありません");
       }
+    })
+    .fail(function() {
+      alert('映画検索に失敗しました');
     })
   });
 });
