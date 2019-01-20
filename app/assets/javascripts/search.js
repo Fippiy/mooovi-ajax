@@ -47,6 +47,7 @@ $(function() {
     })
 
     .done(function(products) {
+      // 検索文字数が0の時に表示を消す→moooviの過去サーチあたりを参照か？
       $(".listview.js-lazy-load-images").empty();
       if (products.length !== 0) {
         products.forEach(function(product){
